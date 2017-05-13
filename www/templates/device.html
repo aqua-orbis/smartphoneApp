@@ -1,0 +1,27 @@
+<ion-view view-title="{{storageuser.username}}">
+  <ion-content>
+    <div class="list card">
+
+  <div class="item">
+    <h2>{{device.name}}</h2>
+    <p>{{device.registers.length}} registers</p>
+  </div>
+
+  <div class="item item-body">
+    <p>
+        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick">
+        </canvas>
+    </p>
+    <p>
+        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick">
+        </canvas>
+    </p>
+    <p>
+      <a href="#" class="subdued">Share</a>
+      <a href="#" class="subdued">More stats</a>
+    </p>
+  </div>
+
+</div>
+  </ion-content>
+</ion-view>

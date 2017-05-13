@@ -1,0 +1,14 @@
+<ion-view view-title="Devices">
+  <ion-content>
+      <ul class="list">
+          <a ng-href="#/app/devices/{{device._id}}" class="item item-icon-left" ng-repeat="device in devices">
+              <i class="icon ion-radio-waves"></i>
+              {{device.name}}
+              <p>
+                  {{device.description}}
+              </p>
+                <span class="badge c_indigo400">{{device.registers.length}} registers</span>
+          </a>
+      </ul>
+  </ion-content>
+</ion-view>

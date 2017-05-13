@@ -5,11 +5,15 @@
       <ul class="list">
           <a ng-href="#/app/devices/{{device._id}}" class="item item-icon-left" ng-repeat="device in devices">
               <i class="icon ion-radio-waves"></i>
+              <div class="o_floatRight o_textRight">
+                <span class="o_badge c_indigo400">{{device.registers.length}} registers</span><br>
+                <span class="o_badge c_red400" ng-show="{{device.overPassed=='true'}}">Reached limit!</span>
+              </div>
               {{device.name}}
               <p>
                   {{device.description}}
               </p>
-                <span class="badge c_indigo400">{{device.registers.length}} registers</span>
+
           </a>
       </ul>
   </ion-content>

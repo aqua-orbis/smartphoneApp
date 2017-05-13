@@ -1,0 +1,47 @@
+<ion-modal-view view-title="Signup">
+    <ion-content class="o_loginBackground">
+      <div>
+        <div class="o_loginDivForm">
+          <h1>WaterApp</h1>
+
+          <span class="item-note">v0.0.1</span>
+          <br><br>
+          <p>
+              <i class="icon ion-email"></i>
+              <input ng-model="signupData.email" class="o_loginInput"
+              placeholder="Email">
+          </p>
+          <br>
+          <p>
+              <i class="icon ion-person"></i>
+              <input ng-model="signupData.username" class="o_loginInput"
+              placeholder="Username">
+          </p>
+          <br>
+          <p>
+              <i class="icon ion-locked"></i>
+              <input ng-model="signupData.password" class="o_loginInput"
+              placeholder="Password" style="-webkit-text-security: disc;">
+          </p>
+          <br>
+          <p>
+              <i class="icon ion-clipboard"></i>
+              <input ng-model="signupData.description" class="o_loginInput"
+              placeholder="Description">
+          </p>
+          <br>
+          <p>
+              <a class="o_loginButton button button-block" ng-click="doSignup()">
+                  SIGN UP
+              </a>
+          </p>
+          <br>
+          <p>
+
+              <a class="o_signupLink" ng-href="#/app/login">
+                  You have an account? Log in!
+              </a>
+          </p>
+        </div>
+      </div>
+</ion-modal-view>

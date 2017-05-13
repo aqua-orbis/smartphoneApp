@@ -1,9 +1,11 @@
-var urlapi = "http://127.0.0.1:3000/api/";
+//var urlapi = "http://127.0.0.1:3000/api/";
+var urlapi = "http://46.105.30.116:3000/api/";
 
 angular.module('app', [
     'ionic',
     'chart.js',
     'app.menu',
+    'app.signup',
     'app.login',
     'app.dashboard',
     'app.users',
@@ -38,6 +40,15 @@ angular.module('app', [
         controller: 'MenuCtrl'
       })
 
+        .state('app.signup', {
+          url: '/signup',
+          views: {
+            'menuContent': {
+              templateUrl: 'templates/signup.html',
+              controller: 'SignupCtrl'
+            }
+          }
+        })
       .state('app.login', {
         url: '/login',
         views: {

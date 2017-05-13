@@ -50,6 +50,32 @@ angular.module('app.user', [])
 
         });
     };
+    $scope.doUnfollow = function() {
+        $http({
+            url: urlapi + 'users/unfollow/' + $stateParams.userid,
+            method: "POST",
+            data: "{}"
+          })
+        .then(function(data) {
+          console.log('data success events');
+          console.log(data); // for browser console
+
+          localStorage.setItem("water_app_userdata", JSON.stringify(data.data));
+          $scope.storageuser = JSON.parse(localStorage.getItem("water_web_userdata"));
+
+          $scope.$broadcast('scroll.refreshComplete'); //refresher stop
+
+        }, function(data) {
+          console.log('data error');
+          $scope.$broadcast('scroll.refreshComplete'); //refresher stop
+          $ionicLoading.show({
+            template: 'Error connecting server',
+            noBackdrop: true,
+            duration: 2000
+          });
+
+        });
+    };
 
     $scope.arrayObjectIndexOf = function(myArray, searchTerm) {
         console.log("array");

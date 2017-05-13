@@ -1,5 +1,5 @@
-//var urlapi = "http://127.0.0.1:3000/api/";
-var urlapi = "http://46.105.30.116:3000/api/";
+var urlapi = "http://127.0.0.1:3000/api/";
+//var urlapi = "http://46.105.30.116:3000/api/";
 
 angular.module('app', [
     'ionic',

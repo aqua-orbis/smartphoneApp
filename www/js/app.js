@@ -11,7 +11,9 @@ angular.module('app', [
     'app.users',
     'app.user',
     'app.devices',
-    'app.device'
+    'app.device',
+    'app.newsfeed',
+    'app.newpublication'
   ])
 
   .run(function($ionicPlatform) {
@@ -104,7 +106,25 @@ angular.module('app', [
             controller: 'DeviceCtrl'
           }
         }
-      });
+      })
+    .state('app.newsfeed', {
+      url: '/newsfeed',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/newsfeed.html',
+          controller: 'NewsfeedCtrl'
+        }
+      }
+    })
+  .state('app.newpublication', {
+    url: '/newpublication',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/newpublication.html',
+        controller: 'NewpublicationCtrl'
+      }
+    }
+  });
     // if none of the above states are matched, use this as the fallback
     //$urlRouterProvider.otherwise('/app/dashboard');
 

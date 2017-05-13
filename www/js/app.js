@@ -12,6 +12,7 @@ angular.module('app', [
     'app.user',
     'app.devices',
     'app.device',
+    'app.newdevice',
     'app.newsfeed',
     'app.newpublication'
   ])
@@ -107,6 +108,15 @@ angular.module('app', [
           }
         }
       })
+    .state('app.newdevice', {
+      url: '/newdevice',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/newdevice.html',
+          controller: 'NewdeviceCtrl'
+        }
+      }
+    })
     .state('app.newsfeed', {
       url: '/newsfeed',
       views: {

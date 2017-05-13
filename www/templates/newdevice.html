@@ -1,0 +1,18 @@
+<ion-view view-title="New Device">
+    <ion-content class="c_blueGrey100">
+        <div class="card">
+            <label class="item item-input">
+                <input  ng-model="newdevice.name" type="text" placeholder="Device name">
+            </label>
+            <label class="item item-input">
+                <input  ng-model="newdevice.description" type="text" placeholder="Device description">
+            </label>
+            <label class="item item-input">
+                <input  ng-model="newdevice.icon" type="text" placeholder="Device image">
+            </label>
+            <button ng-click="doNewDevice()" class="button button-full button-positive">
+                Publish!
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

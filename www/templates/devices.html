@@ -1,5 +1,7 @@
 <ion-view view-title="Devices">
   <ion-content>
+      <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+      </ion-refresher>
       <ul class="list">
           <a ng-href="#/app/devices/{{device._id}}" class="item item-icon-left" ng-repeat="device in devices">
               <i class="icon ion-radio-waves"></i>

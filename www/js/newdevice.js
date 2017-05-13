@@ -1,25 +1,24 @@
-angular.module('app.newpublication', [])
+angular.module('app.newdevice', [])
 
-.controller('NewpublicationCtrl', function($scope, $http, $ionicModal,
+.controller('NewdeviceCtrl', function($scope, $http, $ionicModal,
             $timeout, $ionicLoading, $filter) {
 
 
-    $scope.newpublication={};
+    $scope.newdevice={};
     $scope.page=0;
 
-    $scope.doNewPublication = function() {
+    $scope.doNewDevice = function() {
         $http({
-            url: urlapi + 'publications',
+            url: urlapi + 'devices',
             method: "POST",
-            data: $scope.newpublication
+            data: $scope.newdevice
         })
         .then(function(data){
             console.log('data success events');
             console.log(data); // for browser console
             //$scope.events = data.data; // for UI
             //$scope.publications=data.data;
-            window.location.href="#/app/newsfeed";
-
+            window.location.href="#/app/devices";
         }, function(data){
             console.log('data error');
             $scope.$broadcast('scroll.refreshComplete');//refresher stop

@@ -1,4 +1,4 @@
-<div class="card" ng-repeat="publication in publications">
+<div class="card" ng-repeat="publication in publications | orderBy: '-date'">
   <a class="item item-avatar" ng-href="#/app/users/{{publication.user._id}}">
     <img ng-src="{{publication.user.img}}">
     <h2>{{publication.user.username}}</h2>
@@ -20,12 +20,12 @@
     <a class="tab-item">
 
     </a>
-    <a class="tab-item" ng-click="unsavepublication(publication)"
-    ng-show="ispublicationSaved(publication)">
+    <a class="tab-item" ng-click="doUnlike(publication)"
+    ng-show="arrayObjectIndexOf(publication.likes, storageuser._id)!=-1">
         <i class="icon ion-heart ctext_red600"></i>
     </a>
-    <a class="tab-item" ng-click="savepublication(publication)"
-    ng-hide="ispublicationSaved(publication)">
+    <a class="tab-item" ng-click="doLike(publication)"
+    ng-show="arrayObjectIndexOf(publication.likes, storageuser._id)==-1">
         <i class="icon ion-heart"></i>
     </a>
   </div>

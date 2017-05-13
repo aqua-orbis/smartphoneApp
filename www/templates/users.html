@@ -1,14 +1,16 @@
 <ion-view view-title="Devices">
   <ion-content>
-      <ul class="list">
-          <a ng-href="#/app/users/{{user._id}}" class="item item-icon-left" ng-repeat="user in users">
-              <i class="icon ion-ios-person"></i>
-              {{user.username}}
-              <p>
-                  {{user.description}}
-              </p>
-                <span class="badge c_indigo400">{{user.devices.length}} devices</span>
-          </a>
-      </ul>
+    <ul class="list">
+      <a ng-href="#/app/users/{{user._id}}" class="item item-icon-left" ng-repeat="user in users">
+        <i class="icon ion-ios-person"></i> {{user.username}}
+        <div class="o_floatRight o_textRight">
+          <span class="o_badge c_indigo400">{{user.devices.length}} devices</span><br>
+          <span class="o_badge c_green400">{{user.publications.length}} publications</span>
+        </div>
+        <p>
+          {{user.description}}
+        </p>
+      </a>
+    </ul>
   </ion-content>
 </ion-view>

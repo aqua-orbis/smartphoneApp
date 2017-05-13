@@ -6,9 +6,6 @@
 .o_mainRow{
     height: calc(100%/4);
 }
-.o_floatRight{
-    float: right;
-}
 .o_loginBackground{
     height: 100%!important;
     width: 100%;

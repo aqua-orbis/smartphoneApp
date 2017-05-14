@@ -4,16 +4,23 @@
 
   <div class="item item-avatar">
     <img ng-src="{{user.img}}">
-    <button ng-click="doFollow()"
-     ng-show="arrayObjectIndexOf(storageuser.following, user._id)==-1"
-     class="button button-small button-balanced o_floatRight">
-      Follow
-    </button>
-    <button ng-click="doUnfollow()"
-     ng-show="arrayObjectIndexOf(storageuser.following, user._id)!=-1"
-     class="button button-small button-assertive o_floatRight">
-      Unfollow
-    </button>
+    <a ng-href="#/app/edituser"
+     ng-show="storageuser._id==user._id"
+     class="button button-small c_indigo400 o_floatRight">
+      Edit profile
+  </a>
+    <div ng-hide="storageuser._id==user._id">
+        <button ng-click="doFollow()"
+         ng-show="arrayObjectIndexOf(storageuser.following, user._id)==-1"
+         class="button button-small button-balanced o_floatRight">
+          Follow
+        </button>
+        <button ng-click="doUnfollow()"
+         ng-show="arrayObjectIndexOf(storageuser.following, user._id)!=-1"
+         class="button button-small button-assertive o_floatRight">
+          Unfollow
+        </button>
+    </div>
     <h2>{{user.username}}</h2>
     <p>{{user.devices.length}} devices</p>
   </div>

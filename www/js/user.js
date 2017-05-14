@@ -128,27 +128,23 @@ angular.module('app.user', [])
     //publications functions
     $scope.publications=[];
     $scope.page=0;
+    $http({
+        url: urlapi + 'publications/user/id/' + $stateParams.userid,
+        method: "GET"
+    })
+    .then(function(data){
+        console.log('data success events');
+        console.log(data); // for browser console
+        //$scope.events = data.data; // for UI
+        $scope.publications=data.data;
+        $scope.$broadcast('scroll.refreshComplete');//refresher stop
 
-    $scope.doRefresh = function() {
-        $http({
-            url: urlapi + 'publications/user/id/' + $stateParams.userid,
-            method: "GET"
-        })
-        .then(function(data){
-            console.log('data success events');
-            console.log(data); // for browser console
-            //$scope.events = data.data; // for UI
-            $scope.publications=data.data;
-            $scope.$broadcast('scroll.refreshComplete');//refresher stop
+    }, function(data){
+        console.log('data error');
+        $scope.$broadcast('scroll.refreshComplete');//refresher stop
+        $ionicLoading.show({ template: 'Error connecting server', noBackdrop: true, duration: 2000 });
 
-        }, function(data){
-            console.log('data error');
-            $scope.$broadcast('scroll.refreshComplete');//refresher stop
-            $ionicLoading.show({ template: 'Error connecting server', noBackdrop: true, duration: 2000 });
-
-        });
-    };
-    $scope.doRefresh();
+    });
 
     $scope.doLike = function(publication) {
         $http({

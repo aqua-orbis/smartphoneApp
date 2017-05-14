@@ -10,6 +10,7 @@ angular.module('app', [
     'app.dashboard',
     'app.users',
     'app.user',
+    'app.edituser',
     'app.devices',
     'app.device',
     'app.newdevice',
@@ -91,6 +92,15 @@ angular.module('app', [
         }
       })
 
+      .state('app.edituser', {
+      url: '/edituser',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/edituser.html',
+          controller: 'EdituserCtrl'
+        }
+      }
+      })
       .state('app.devices', {
         url: '/devices',
         views: {

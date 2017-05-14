@@ -76,9 +76,6 @@ angular.module('app.newsfeed', [])
     };
 
     $scope.arrayObjectIndexOf = function(myArray, searchTerm) {
-        console.log("array");
-        console.log(myArray);
-        console.log(searchTerm);
         if(myArray){
             for(var i = 0, len = myArray.length; i < len; i++) {
                 if (myArray[i] === searchTerm){

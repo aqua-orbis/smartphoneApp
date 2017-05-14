@@ -1,7 +1,7 @@
 angular.module('app.newpublication', [])
 
 .controller('NewpublicationCtrl', function($scope, $http, $ionicModal,
-            $timeout, $ionicLoading, $filter) {
+            $timeout, $ionicLoading, $filter, $cordovaCamera) {
 
 
     $scope.newpublication={};
@@ -26,5 +26,28 @@ angular.module('app.newpublication', [])
             $ionicLoading.show({ template: 'Error connecting server', noBackdrop: true, duration: 2000 });
 
         });
+    };
+
+    //camera
+    $scope.selectImg = function(){
+        console.log("img");
+        var options = {
+                quality: 100,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.sourceType,
+                allowEdit: true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 100,
+                targetHeight: 100,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false,
+                correctOrientation:true
+            };
+
+            $cordovaCamera.getPicture(options).then(function(imageData) {
+                $scope.newpublication.img = "data:image/jpeg;base64," + imageData;
+                }, function(err) {
+                console.log(err);
+            });
     };
 });

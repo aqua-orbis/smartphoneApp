@@ -4,6 +4,11 @@
             <label class="item item-input">
                 <textarea ng-model="newpublication.content" rows="6" placeholder="I love water"></textarea>
             </label>
+            <img ng-show="newpublication.img" ng-src="{{newpublication.img}}" style="width:100%;"
+            ng-click="selectImg()"/>
+            <button ng-click="selectImg()" class="button button-full button-positive">
+                Add photo
+            </button>
             <button ng-click="doNewPublication()" class="button button-full button-positive">
                 Publish!
             </button>

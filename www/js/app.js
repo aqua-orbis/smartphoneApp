@@ -13,6 +13,7 @@ angular.module('app', [
     'app.devices',
     'app.device',
     'app.newdevice',
+    'app.usage',
     'app.newsfeed',
     'app.newpublication'
   ])
@@ -117,6 +118,15 @@ angular.module('app', [
         }
       }
     })
+  .state('app.usage', {
+    url: '/usage',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/usage.html',
+        controller: 'UsageCtrl'
+      }
+    }
+  })
     .state('app.newsfeed', {
       url: '/newsfeed',
       views: {
@@ -193,6 +203,15 @@ angular.module('app', [
                     data.push(registers[i].value);
                     var lbl = $filter('date')(registers[i].date, 'HH')
                     labels.push(lbl);
+                }
+                return [data, labels];
+            },
+            contractToChart: function(contract) {
+                var data = [];
+                var labels = [];
+                for(var i=0; i<contract.data.length; i++) {
+                    data.push(contract.data[i].consumo);
+                    labels.push(contract.data[i].anymes_cal);
                 }
                 return [data, labels];
             }

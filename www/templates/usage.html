@@ -1,0 +1,27 @@
+<ion-view view-title="{{storageuser.username}} usage">
+  <ion-content>
+    <div class="list card">
+      <div class="item item-body">
+          <h2>user: {{storageuser.username}}</h2>
+          <h2>contract: {{contract.contratocod}}</h2>
+          <p>
+              Municipi: {{contract.data[0].desc_muni}}
+              <br>
+              Districte: {{contract.data[0].des_distric}}
+              <br>
+              Tipus d'ús: {{contract.data[0].uso}}
+              <br>
+              Tipus de subministrament: {{contract.data[0].tiposubministro}}
+          </p>
+        <p>
+          <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick">
+        </canvas>
+        </p>
+        <p>
+          <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-series="series" chart-options="options" chart-dataset-override="datasetOverride" chart-click="onClick">
+        </canvas>
+        </p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

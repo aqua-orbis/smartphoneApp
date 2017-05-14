@@ -1,8 +1,5 @@
 <ion-view view-title="Dashboard">
   <ion-content>
-    <a ng-href="#/app/newTravel" class="item item-icon-left c_blueGradient1">
-      <i class="icon ion-home"></i> Home
-    </a>
     <a ng-href="#/app/users/{{storageuser._id}}" class="item item-icon-left c_blueGradient1">
       <i class="icon ion-person"></i> {{storageuser.username}} profile
     </a>
@@ -30,15 +27,9 @@
     <a ng-href="#/app/search" class="item item-icon-left c_blueGradient1">
       <i class="icon ion-search"></i> Search
     </a>
-    <a href="#/app/users" class="item item-icon-left c_blueGradient1">
-      <i class="icon ion-person-stalker"></i> Users
-    </a>
     <a href="#/app/notifications" class="item item-icon-left c_blueGradient1">
       <i class="icon ion-android-notifications"></i> Notifications
       <span class="badge c_purple300">{{storageuser.notifications.length}}</span>
-    </a>
-    <a href="#/app/settings" class="item item-icon-left c_blueGradient1">
-      <i class="icon ion-settings"></i> Settings
     </a>
     <a href="#/app/help" class="item item-icon-left c_blueGradient1">
       <i class="icon ion-ios-help-outline"></i> Help

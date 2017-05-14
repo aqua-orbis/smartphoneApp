@@ -9,6 +9,9 @@ angular.module('app.edituser', [])
           console.log('data success events');
           console.log(data); // for browser console
           $scope.user = data.data;
+          localStorage.setItem("water_app_userdata", JSON.stringify(data.data));
+          $scope.storageuser = JSON.parse(localStorage.getItem("water_app_userdata"));
+
           $scope.$broadcast('scroll.refreshComplete'); //refresher stop
 
         }, function(data) {
@@ -36,6 +39,10 @@ angular.module('app.edituser', [])
             console.log(data); // for browser console
             //$scope.events = data.data; // for UI
             //$scope.publications=data.data;
+            localStorage.setItem("water_app_userdata", JSON.stringify(data.data));
+            $scope.storageuser = JSON.parse(localStorage.getItem("water_app_userdata"));
+            
+
             window.location.href="#/app/user/" + $scope.user._id;
 
         }, function(data){

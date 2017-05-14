@@ -10,6 +10,10 @@
             <label class="item item-input">
                 <input  ng-model="newdevice.icon" type="text" placeholder="Device image">
             </label>
+            <img ng-hide="newdevice.icon" ng-src="img/device.png" style="width:100%;"
+            ng-click="selectImg()"/>
+            <img ng-show="newdevice.icon" ng-src="{{newdevice.icon}}" style="width:100%;"
+            ng-click="selectImg()"/>
             <button ng-click="doNewDevice()" class="button button-full button-positive">
                 Publish!
             </button>

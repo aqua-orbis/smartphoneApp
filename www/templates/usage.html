@@ -1,5 +1,7 @@
 <ion-view view-title="{{storageuser.username}} usage">
   <ion-content>
+      <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+      </ion-refresher>
     <div class="list card">
       <div class="item item-body">
           <h2>user: {{storageuser.username}}</h2>
